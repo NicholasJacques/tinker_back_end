@@ -21,7 +21,7 @@ RSpec.describe 'Authentication API' do
         user = create(:user)
         email = user.email
 
-        post '/api/v1/authentication', params: { email: email, password: "badpassword" }
+        post '/api/v1/authentication', params: { email: email, password: 'badpassword' }
         parsed_response = JSON.parse(response.body)
 
         expect(parsed_response).to have_key('error')
