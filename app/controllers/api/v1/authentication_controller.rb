@@ -6,7 +6,7 @@ class Api::V1::AuthenticationController < ApplicationController
       auth_token = JsonWebToken.encode({ user_id: user.id })
       render json: {auth_token: auth_token}, status: :ok
     else
-      render json: {error: 'Invalid username / password'}, status: :unauthorized
+      render json: { error: 'Login Unsuccesful' }, status: :unauthorized
     end
   end
 end
